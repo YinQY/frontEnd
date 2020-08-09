@@ -192,7 +192,7 @@ console.log(p instanceof Person) // true
 （1）创建一个新对象；
 （2）将构造函数的作用域赋给新对象（因此this就指向了这个对象）；
 （3）执行构造函数中的代码（为这个新对象添加属性）；
-（4）返回新对象。
+（4）返回新对象。(如果构造函数返回引用类型的值或者function则返回构造函数中的值)
 ```
 
 用JS模拟new的过程：
@@ -228,7 +228,7 @@ function _new(constructor){
   //或者直接 let target = {__proto__: constructor.prototype}
   let result = constructor.apply(target,[].slice.call(arguments,1));//result就是构造函数返回的值
   //或者 constructor.call(target,...Array.prototype.slice.apply(arguments,[1]));
-  if(result && result instanceof Function && typeof result == 'object'){
+  if(result && (result instanceof Function || typeof result == 'object')){
     return result;
   }
   return target;
