@@ -222,6 +222,8 @@ cat1.hasOwnProperty(type); //false
 　for(var prop in cat1) { alert("cat1["+prop+"]="+cat1[prop]); }
 ```
 
+## 最后
 
+尽量不要使用`__proto__(隐式原型)`属性,因为有些浏览器不支持。尽量用`Object.getPrototypeOf(target)`来获取构造函数的原型对象`Function.prototype`。
 
 来源：阮一峰-[Javascript 面向对象编程（一）：封装](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)
