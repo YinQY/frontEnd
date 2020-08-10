@@ -1,2 +1,4 @@
-# frontEnd
-javascript css html etc learning notes
+# 前端学习
+
+Javascript
+
